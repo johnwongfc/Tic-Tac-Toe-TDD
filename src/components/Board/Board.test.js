@@ -29,4 +29,9 @@ describe("Board Testing", () => {
   it("renders 9 squares", () => {
     expect(component.props().squares).toHaveLength(9);
   })
+
+  it("calls onclick event on a square", () => {
+    component.find("button").first().simulate("click");
+    expect(onClick).toBeCalledTimes(1);
+  });
 });
