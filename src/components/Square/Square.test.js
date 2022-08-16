@@ -10,7 +10,11 @@ describe("Square Testing", () => {
 
   it("renders button", () => {
     const wrapper = shallow(<Square />);
-    console.log(wrapper.debug())
     expect(wrapper.find("button")).toHaveLength(1);
+  })
+
+  it("renders X when X is passed in", () => {
+    const wrapper = shallow(<Square value={"X"}/>);
+    expect(wrapper.text()).toBe("X");
   })
 });
