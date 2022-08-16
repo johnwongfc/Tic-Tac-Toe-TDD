@@ -17,4 +17,12 @@ describe("Square Testing", () => {
     const wrapper = shallow(<Square value={"X"}/>);
     expect(wrapper.text()).toBe("X");
   })
+
+  it("is clickable", () => {
+    const onClick = jest.fn()
+    const wrapper = shallow(<Square onClick={onClick}/>);
+    wrapper.simulate("click")
+    expect(onClick).toBeCalledTimes(1);
+
+  })
 });
