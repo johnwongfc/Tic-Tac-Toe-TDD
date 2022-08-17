@@ -64,7 +64,6 @@ const Game = () => {
 
   return (
     <div>
-      {/* <div className="player-display">{`Next player: ${xO}`}</div> */}
       <h3 className="player-display">
         {stepNumber === 9 && !winner
           ? "It's a Draw!"
