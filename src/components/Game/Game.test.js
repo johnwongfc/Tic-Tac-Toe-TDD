@@ -31,4 +31,15 @@ describe("Game Testing", () => {
     wrapper.find(".Square").first().simulate("click");
     expect(wrapper.find(".Square").first().text()).toBe("O");
   });
+
+  it("shows X wins", () => {
+    const wrapper = mount(<Game />);
+    const steps = [0, 1, 3, 4, 6];
+    const winner = "X";
+
+    steps.forEach((step) => {
+      wrapper.find(".Square").at(step).simulate("click");
+    });
+    expect(wrapper.find(".player-display").text()).toBe(`Winner: ${winner}`);
+  });
 });
