@@ -26,11 +26,15 @@ const Game = () => {
 
   return (
     <div>
-      <Board squares={history[stepNumber]} onClick={handleClick} />
       {/* <div className="player-display">{`Next player: ${xO}`}</div> */}
       <h3 className="player-display">
-        {winner ? `Winner: ${winner}` : `Next player: ${xO}`}
+        {stepNumber === 9 && !winner
+          ? "It's a Draw!"
+          : winner
+          ? `Winner: ${winner}`
+          : `Next player: ${xO}`}
       </h3>
+      <Board squares={history[stepNumber]} onClick={handleClick} />
     </div>
   );
 };
