@@ -9,9 +9,11 @@ const Game = () => {
   const xO = xIsNext ? "X" : "O";
 
   return (
-  <div>
-    <Board />
-  </div>);
+    <div>
+      <Board />
+      <div className="player-display">{`Next player: ${xO}`}</div>
+    </div>
+  );
 };
 
 export default Game;
