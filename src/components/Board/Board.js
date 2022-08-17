@@ -4,7 +4,7 @@ import Square from "../Square/Square";
 
 const Board = ({ squares, onClick }) => {
   return (
-    <div className="Board">
+    <div className="board">
       {squares?.map((square, i) => (
         <Square key={i} value={square} onClick={() => onClick(i)} />
       ))}
