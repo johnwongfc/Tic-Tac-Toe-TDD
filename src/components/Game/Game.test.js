@@ -68,4 +68,11 @@ describe("Game Testing", () => {
     expect(wrapper.find(".squares").first().text()).toBe("");
     expect(wrapper.find(".squares").last().text()).toBe("");
   });
+
+  it("rewinds game when clicked", () => {
+    wrapper.find(".squares").first().simulate("click");
+    expect(wrapper.find(".squares").first().text()).toBe("X");
+    wrapper.find(".rewind").simulate("click");
+    expect(wrapper.find(".squares").first().text()).toBe("");
+  });
 });
