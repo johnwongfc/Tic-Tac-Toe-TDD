@@ -13,4 +13,11 @@ describe("Game Testing", () => {
     const wrapper = mount(<Game />);
     expect(wrapper.containsMatchingElement(<Board />)).toEqual(true);
   });
+
+  it("renders player's turn", () => {
+    const wrapper = mount(<Game />);
+    const xO = 'X';
+    // console.log(wrapper.find(".player-display").debug());
+    expect(wrapper.find(".player-display").text()).toBe(`Next player: ${xO}`);
+  });
 });
