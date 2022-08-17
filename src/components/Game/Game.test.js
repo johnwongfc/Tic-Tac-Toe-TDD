@@ -24,12 +24,8 @@ describe("Game Testing", () => {
     const wrapper = mount(<Game />);
     wrapper.find(".Square").first().simulate("click");
     expect(wrapper.find(".Square").first().text()).toBe("X");
-    wrapper.find(".Square").first().simulate("click");
-    expect(wrapper.find(".Square").first().text()).toBe("O");
-    wrapper.find(".Square").first().simulate("click");
-    expect(wrapper.find(".Square").first().text()).toBe("X");
-    wrapper.find(".Square").first().simulate("click");
-    expect(wrapper.find(".Square").first().text()).toBe("O");
+    wrapper.find(".Square").last().simulate("click");
+    expect(wrapper.find(".Square").last().text()).toBe("O");
   });
 
   it("shows X wins", () => {
