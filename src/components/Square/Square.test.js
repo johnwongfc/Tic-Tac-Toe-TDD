@@ -24,4 +24,13 @@ describe("Square Testing", () => {
     wrapper.simulate("click");
     expect(onClick).toBeCalledTimes(1);
   });
+
+  it("changes styles when value is X or O", () => {
+    const onClick = jest.fn();
+    const wrapper = shallow(<Square value="X" onClick={onClick} />);
+    expect(wrapper.find(".squares").props().className).toEqual("squares X");
+
+    const wrapper1 = shallow(<Square value="O" onClick={onClick} />);
+    expect(wrapper1.find(".squares").props().className).toEqual("squares O");
+  });
 });
