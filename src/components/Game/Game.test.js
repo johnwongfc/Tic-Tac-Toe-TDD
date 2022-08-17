@@ -20,9 +20,15 @@ describe("Game Testing", () => {
     expect(wrapper.find(".player-display").text()).toBe(`Next player: ${xO}`);
   });
 
-  it("renders X when clicked", () => {
+  it("renders X and O when clicked", () => {
     const wrapper = mount(<Game />);
     wrapper.find(".Square").first().simulate("click");
     expect(wrapper.find(".Square").first().text()).toBe("X");
+    wrapper.find(".Square").first().simulate("click");
+    expect(wrapper.find(".Square").first().text()).toBe("O");
+    wrapper.find(".Square").first().simulate("click");
+    expect(wrapper.find(".Square").first().text()).toBe("X");
+    wrapper.find(".Square").first().simulate("click");
+    expect(wrapper.find(".Square").first().text()).toBe("O");
   });
 });
