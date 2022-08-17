@@ -39,6 +39,29 @@ const Game = () => {
     );
   };
 
+  const rewind = () => {
+    if (history.length > 1) {
+      return (
+        <button
+          className="rewind"
+          onClick={() => {
+            setHistory(history.slice(0, stepNumber));
+            setStepNumber((prevNum) => prevNum - 1);
+            setXisNext((prev) => !prev);
+          }}
+        >
+          Rewind
+        </button>
+      );
+    } else {
+      return (
+        <button className="rewind" disabled={true}>
+          Rewind
+        </button>
+      );
+    }
+  };
+
   return (
     <div>
       {/* <div className="player-display">{`Next player: ${xO}`}</div> */}
@@ -50,7 +73,11 @@ const Game = () => {
           : `Next player: ${xO}`}
       </h3>
       <Board squares={history[stepNumber]} onClick={handleClick} />
-      <div className="button-display">{reset()}</div>;
+      <div className="button-display">
+        {reset()}
+        {rewind()}
+      </div>
+      ;
     </div>
   );
 };
