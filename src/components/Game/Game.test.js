@@ -48,7 +48,7 @@ describe("Game Testing", () => {
     expect(wrapper.find(".player-display").text()).toBe(`Winner: ${winner}`);
   });
 
-  it("should tell you if its a draw", () => {
+  it("shows draw", () => {
     const step = [0, 1, 2, 6, 7, 8, 3, 4, 5];
 
     step.forEach((index) => {
@@ -56,5 +56,16 @@ describe("Game Testing", () => {
     });
 
     expect(wrapper.find(".player-display").text()).toBe("It's a Draw!");
+  });
+
+  it("resets game when clicked", () => {
+    wrapper.find(".squares").first().simulate("click");
+    wrapper.find(".squares").last().simulate("click");
+    expect(wrapper.find(".squares").first().text()).toBe("X");
+    expect(wrapper.find(".squares").last().text()).toBe("O");
+
+    wrapper.find(".reset").simulate("click");
+    expect(wrapper.find(".squares").first().text()).toBe("");
+    expect(wrapper.find(".squares").last().text()).toBe("");
   });
 });
