@@ -1,3 +1,16 @@
-.square {
-  
+.squares {
+  background: #071f42;
+  border: none;
+  font-size: 5rem;
+  /* font-weight: 800; */
+  cursor: pointer;
+  outline: none;
+  border-radius: 5px;
+}
+
+.X {
+  color: purple;
+}
+.O {
+  color: teal;
 }

@@ -77,7 +77,6 @@ const Game = () => {
         {reset()}
         {rewind()}
       </div>
-      ;
     </div>
   );
 };
