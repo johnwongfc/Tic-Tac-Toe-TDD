@@ -24,6 +24,21 @@ const Game = () => {
     setXisNext(!xIsNext);
   };
 
+  const reset = () => {
+    return (
+      <button
+        className="reset"
+        onClick={() => {
+          setHistory([Array(9).fill(null)]);
+          setStepNumber(0);
+          setXisNext(true);
+        }}
+      >
+        Reset
+      </button>
+    );
+  };
+
   return (
     <div>
       {/* <div className="player-display">{`Next player: ${xO}`}</div> */}
@@ -35,6 +50,7 @@ const Game = () => {
           : `Next player: ${xO}`}
       </h3>
       <Board squares={history[stepNumber]} onClick={handleClick} />
+      <div className="button-display">{reset()}</div>;
     </div>
   );
 };
